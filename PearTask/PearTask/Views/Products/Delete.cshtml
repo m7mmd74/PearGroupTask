@@ -1,0 +1,38 @@
+﻿@model Product
+@{
+    ViewData["Title"] = "Delete";
+}
+<h1>Delete Product</h1>
+<h2>Are you sure you want to delete this?</h2>
+<div>
+    <h4>@Model.ProductName</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>Product Name</dt>
+        <dd>@Model.ProductName</dd>
+
+        <dt>Quantity Per Unit</dt>
+        <dd>@Model.QuantityPerUnit</dd>
+
+        <dt>Reorder Level</dt>
+        <dd>@Model.ReorderLevel</dd>
+
+        <dt>Supplier Id</dt>
+        <dd>@Model.SupplierID</dd>
+
+        <dt>Unit Price</dt>
+        <dd>@Model.UnitPrice</dd>
+
+        <dt>Units In Stock</dt>
+        <dd>@Model.UnitsInStock</dd>
+
+        <dt>Units On Order</dt>
+        <dd>@Model.UnitsOnOrder</dd>
+    </dl>
+
+    <form asp-action="DeleteConfirmed">
+        <input type="hidden" asp-for="ProductID" />
+        <input type="submit" value="Delete" class="btn btn-danger" /> |
+        <a asp-action="Index">Back to List</a>
+    </form>
+</div>
